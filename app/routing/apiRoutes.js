@@ -1,18 +1,11 @@
 const path = require('path');
-// Use Nodes built in File System module to read and write data.
-const fs = require('fs');
+
+// Pull in friends from friends.js
+const friends = require('../data/friends')
 
 
 const getFriend = (req, res) => {
-  // Use the fs module to read a file and respond to the request
-  // with JSON. Set the response headers as well.
-  fs.readFile('app/data/friends.js', (err, friends) => {
-    if(err) {
-      throw err;
-    }
-    var data = JSON.parse(friends);
-    res.send(data)
-  })
+  res.send(friends)
 }
 
 
@@ -23,16 +16,7 @@ const saveFriend = (req, res) => {
   let friend = {
     name: "Michelle",
     photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    scores: [5,
-    1,
-    4,
-    4,
-    5,
-    1,
-    2,
-    5,
-    4,
-    1]
+    scores: [5,3,4,5,5,5,5,5,5,5,5]
   }
 
   fs.appendFile('app/data/friends.js', JSON.stringify(friend), (err) => {

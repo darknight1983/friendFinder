@@ -1,0 +1,12 @@
+
+
+.flirty-image {
+  background: url('../images/flirting.jpg') center/cover;
+  width: 100%;
+  height: 500px;
+}
+
+
+.content-grid {
+  max-width: 960px;
+}

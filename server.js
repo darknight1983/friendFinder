@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/app/public')));
 
 // For some reason, I have to pull in the apiRoutes first in order to be able
 // to make a GET request without the '*' route handler catching the request and
