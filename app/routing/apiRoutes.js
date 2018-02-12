@@ -12,19 +12,15 @@ const getFriend = (req, res) => {
 const saveFriend = (req, res) => {
   // Take data from req.body and create new object with data
   // Write that object to the file holding all of the applications friends data
-  console.log('You save a friend.')
-  let friend = {
-    name: "Michelle",
-    photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    scores: [5,3,4,5,5,5,5,5,5,5,5]
-  }
+  console.log(req.body.name)
 
-  fs.appendFile('app/data/friends.js', JSON.stringify(friend), (err) => {
-    if (err) {
-      throw err;
-    }
-    res.end("Data has been written")
-  })
+
+  // fs.appendFile('app/data/friends.js', JSON.stringify(friend), (err) => {
+  //   if (err) {
+  //     throw err;
+  //   }
+  //   res.end("Data has been written")
+  // })
 }
 
 

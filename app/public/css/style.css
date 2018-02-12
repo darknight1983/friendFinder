@@ -10,3 +10,10 @@
 .content-grid {
   max-width: 960px;
 }
+
+
+
+#survey a {
+  color: #FFF;
+  text-decoration: none;
+}
