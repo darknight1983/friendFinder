@@ -12,7 +12,8 @@ const getFriend = (req, res) => {
 const saveFriend = (req, res) => {
   // Take data from req.body and create new object with data
   // Write that object to the file holding all of the applications friends data
-  console.log(req.body.name)
+  console.log("We are getting this route");
+  res.send(req.body)
 
 
   // fs.appendFile('app/data/friends.js', JSON.stringify(friend), (err) => {

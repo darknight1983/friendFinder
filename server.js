@@ -11,8 +11,8 @@ const port = process.env.PORT || 3000;
 
 
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // For parsing application json.
+app.use(bodyParser.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 
 app.use(express.static(path.join(__dirname, '/app/public')));
 
