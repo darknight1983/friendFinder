@@ -21,115 +21,118 @@
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="/survey">Survey</a>
+          <a class="mdl-navigation__link" href="/">Home</a>
         </nav>
       </div>
     </header>
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Title</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="/survey">Survey</a>
+        <a class="mdl-navigation__link" href="/">Home</a>
       </nav>
     </div>
     <main class="mdl-layout__content">
       <div class="mdl-grid survey-form">
         <div class="mdl-cell mdl-cell--12-col">
-          <form class="survey-form" action="#">
+          <form id="survey-form">
             <label for="GET-name">Name:</label>
             <input id="GET-name" type="text" name="name">
             <br/>
-
+            <hr>
+            <label for="GET-photoUrl">Photo-Link:</label>
+            <input id="GET-photoUrl" type="text" name="photo_url">
             <br/>
+            <hr>
             <h5>Do you consider yourself a calm in stressful situations?</h5>
             <select class="question" id="q1"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Is Southern-Style food amongest the best type of food in the world?</h5>
             <select class="question" id="q2"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Do you like children?</h5>
             <select class="question" id="q3"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>If you find a suitcase with $200,000, do you report it?</h5>
             <select class="question" id="q4"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Do you believe that humans are the only intelligent species in the universe?</h5>
             <select class="question" id="q5"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2">2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Would you go sky diving?</h5>
             <select class="question" id="q6"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Would you consider living off grid and eating only what you kill for a year?</h5>
             <select class="question" id="q7"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Is ketcup better on hotdogs than mustard?</h5>
             <select class="question" id="q8"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Is team Android just as important as team iPhone?</h5>
             <select class="question" id="q9"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <h5>Do you believe the illuminati exists?</h5>
             <select class="question" id="q10"> <!--Supplement an id here instead of using 'text'-->
-              <option value="value1">1</option>
-              <option value="value2" >2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
             <br/>
             <button type="submit" name="button">Submit</button>

@@ -1,33 +1,44 @@
 
 
+
 $(function() {
 
 
 
-  $('.survey-form').on('submit', (e) => {
+  $('#survey-form').on('submit', (e) => {
     e.preventDefault();
-    let a1 = $('#q1 option:selected').text()
-    let a2 = $('#q2 option:selected').text()
-    let a3 = $('#q3 option:selected').text()
-    let a4 = $('#q4 option:selected').text()
-    let a5 = $('#q5 option:selected').text()
-    let a6 = $('#q6 option:selected').text()
-    let a7 = $('#q7 option:selected').text()
-    let a8 = $('#q8 option:selected').text()
-    let a9 = $('#q9 option:selected').text()
-    let a10 = $('#q10 option:selected').text()
+    let user = $('#GET-name').val().trim();
+    let photoLink = $('#GET-photoUrl').val().trim();
+    let a1 = $('#q1').val().trim();
+    let a2 = $('#q2').val().trim();
+    let a3 = $('#q3').val().trim();
+    let a4 = $('#q4').val().trim();
+    let a5 = $('#q5').val().trim();
+    let a6 = $('#q6').val().trim();
+    let a7 = $('#q7').val().trim();
+    let a8 = $('#q8').val().trim();
+    let a9 = $('#q9').val().trim();
+    let a10 = $('#q10').val().trim();
 
+    let newFriend = {
+      "name": user,
+      "photo": photoLink,
+      "scores": [ a1, a2, a3, a4, a5, a6, a7, a8, a9, a10 ]
+    }
+    console.log(newFriend)
     // make the post request here!
-    $.ajax({
-      method: 'POST',
-      url: 'api/friends',
-      dataType:'json',
-      data: {
-        name: "John",
-        answers: [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10]
-      }
-    }).then((response) => {
-      console.log(response)
+    $.post('/api/friends', newFriend)
+      .done((response) => {
+        console.log(response)
+      $('.survey-form').html('');
+      let match = `
+        <div class="pic">
+          <img src="${response.img}"/>
+          <h3>Name: ${response.match}</h3>
+          <p>This is your match!</p>
+        </div>
+      `
+      $('.survey-form').html(match);
     })
   })
 

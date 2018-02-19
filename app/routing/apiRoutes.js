@@ -1,27 +1,45 @@
-const path = require('path');
 
 // Pull in friends from friends.js
 const friends = require('../data/friends')
 
 
 const getFriend = (req, res) => {
-  res.send(friends)
+  res.json(friends)
 }
 
 
 const saveFriend = (req, res) => {
-  // Take data from req.body and create new object with data
-  // Write that object to the file holding all of the applications friends data
-  console.log("We are getting this route");
-  res.send(req.body)
+  let newUser = req.body;
+
+  let answers = [];
+  // Change the answers submitted by user to numbers.
+  let scores = newUser.scores.map(stringNum => Number(stringNum));
+
+  newUser.scores = scores;
+
+  let friendsMatch = '';
+  let matchImg = '';
+  let totalDifference = 1000;
+  let diff = 0;
 
 
-  // fs.appendFile('app/data/friends.js', JSON.stringify(friend), (err) => {
-  //   if (err) {
-  //     throw err;
-  //   }
-  //   res.end("Data has been written")
-  // })
+  for (let i = 0; i < friends.length; i++) {
+    diff = 0;
+    for (let j = 0; j < scores.length; j++) {
+
+      diff += Math.abs(friends[i].scores[j] - scores[j])
+
+      if (diff < totalDifference) {
+        totalDifference = diff;
+        friendsMatch = friends[i].name;
+        matchImg = friends[i].photo;
+      }
+
+    }
+  }
+  friends.push(newUser);
+  console.log(friends)
+  res.json({match: friendsMatch, img: matchImg});
 }
 
 
